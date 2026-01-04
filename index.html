@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swastik Classes - Academic Excellence Classes 1-12</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-blue-light: #2d5a8c;
+            --primary-blue-dark: #0f1e2e;
+            --accent-orange: #ff8c42;
+            --accent-orange-light: #ffb366;
+            --accent-orange-dark: #e67e2f;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --text-lighter: #7a7a7a;
+            --bg-light: #f8f9fa;
+            --bg-lighter: #f0f3f7;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --border-light: #f0f0f0;
+            --success-green: #22a55f;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 16px rgba(0,0,0,0.1);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+    /* Light academic base */
+    background: linear-gradient(135deg, #f5f7fb 0%, #e9f0ff 50%, #fdf7f2 100%);
+    color: #1e3a5f;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    /* For smooth color movement */
+    background-size: 400% 400%;
+    animation: heroGradient 18s ease-in-out infinite;
+}
+@keyframes heroGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.hero h1 {
+    color: #1e3a5f;
+}
+
+.hero p {
+    color: #4a4a4a;
+}
+
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 140, 66, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(45, 90, 140, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-orange-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========== WHY SWASTIK SECTION ========== */
+        .why-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-lighter);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--primary-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-orange);
+            transform: translateY(-10px);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ========== CLASSES SECTION ========== */
+        .classes-section {
+            background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .classes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--primary-blue));
+        }
+
+        .class-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-12px);
+        }
+
+        .class-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .class-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .class-subjects {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+
+        .btn-know-more {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 140, 66, 0.25);
+        }
+
+        .btn-know-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 140, 66, 0.35);
+        }
+
+        /* ========== LIBRARY SECTION ========== */
+        .library-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .library-intro {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .library-intro::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .library-intro h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .library-intro p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .btn-library {
+            background: var(--accent-orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-library:hover {
+            background: var(--accent-orange-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        /* ========== LIBRARY CONTENT ========== */
+        .library-content {
+            display: none;
+        }
+
+        .library-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .class-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .class-btn {
+            padding: 0.9rem 1.8rem;
+            background: var(--bg-light);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .class-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
+        }
+
+        .class-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .books-list {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .book-section-title {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent-orange);
+        }
+
+        .book-section-title:first-child {
+            margin-top: 0;
+        }
+
+        .book-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent-orange);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .book-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateX(4px);
+        }
+
+        .book-info {
+            text-align: left;
+            flex: 1;
+        }
+
+        .book-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .book-info p {
+            color: var(--text-lighter);
+            font-size: 0.9rem;
+        }
+
+        .book-link {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(255, 140, 66, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .book-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+        }
+
+        /* ========== CONTACT STRIP ========== */
+        .contact-strip {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            color: white;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 5rem 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-strip::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-strip h3 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-strip p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-btn {
+            background: var(--accent-orange);
+            color: white;
+            padding: 1rem 2.2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .contact-btn:hover {
+            background: white;
+            color: var(--accent-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========== PAGES ========== */
+        .page {
+            display: none;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: calc(100vh - 200px);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page h1 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .page h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .page h3 {
+            font-size: 1.4rem;
+            color: var(--primary-blue-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .page ul, .page ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .page li {
+            margin-bottom: 0.8rem;
+            line-height: 1.9;
+        }
+
+        .content-box {
+            background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+            padding: 2.5rem;
+            border-left: 5px solid var(--accent-orange);
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .approach-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .approach-item {
+            background: white;
+            padding: 2rem;
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .approach-item:hover {
+            border-color: var(--accent-orange);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .approach-item strong {
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 4rem 2rem 1.5rem;
+            margin-top: 6rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-orange);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-orange);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .contact-btn {
+                width: 100%;
+            }
+
+            .page {
+                padding: 2rem 1.5rem;
+            }
+
+            .book-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .book-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem 0;
+                box-shadow: var(--shadow-lg);
+                gap: 0;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">Swastik<span>Classes</span></a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" onclick="showPage('programs')">Academic Programs</a></li>
+                <li><a href="#" onclick="showPage('library')">Library</a></li>
+                <li><a href="#" onclick="showPage('join')">Join Coaching</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1>Building Strong Foundations for Academic Excellence</h1>
+                <p>Classes 1–12 | Concept-based learning, disciplined teaching, and personal attention for every student.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/917701926583" class="btn btn-primary">📱 Join Coaching (WhatsApp)</a>
+                    <button class="btn btn-secondary" onclick="showPage('library')">📚 Explore Library</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY SWASTIK SECTION -->
+        <section class="why-section">
+            <h2 class="section-title">Why Swastik Classes?</h2>
+            <p class="section-subtitle">Excellence through concept clarity, personal attention, and structured learning</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3>Concept-Oriented Teaching</h3>
+                    <p>Deep understanding of topics, not just memorization. Every concept builds a strong foundation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Personal Attention & Doubt Solving</h3>
+                    <p>Small batch sizes with dedicated teacher support. Every student doubt gets addressed.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>NCERT & Board-Focused</h3>
+                    <p>Aligned with official NCERT syllabus. Complete board exam preparation with expert strategies.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Safe & Disciplined Environment</h3>
+                    <p>Structured learning ecosystem with focus on overall development and confidence building.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLASSES SECTION -->
+        <section class="classes-section">
+            <div class="classes-container">
+                <h2 class="section-title">Classes We Teach</h2>
+                <p class="section-subtitle">Comprehensive programs for every academic level</p>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <span class="class-badge">Foundation</span>
+                        <h3>Classes 1–5</h3>
+                        <div class="class-subjects">
+                            <strong>Subjects:</strong><br>
+                            Maths, English, Hindi, EVS
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Reading & writing skills • Habit building • Conceptual clarity</p>
+                        <button class="btn-know-more" onclick="showPage('about')">Know More</button>
+                    </div>
+
+                    <div class="class-card">
+                        <span class="class-badge">Board Focused</span>
+                        <h3>Classes 6–10</h3>
+                        <div class="class-subjects">
+                            <strong>Subjects:</strong><br>
+                            Maths, Science, SST, English, Hindi
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Board prep • Grammar & Analysis • Numerical skills</p>
+                        <button class="btn-know-more" onclick="showPage('about')">Know More</button>
+                    </div>
+
+                    <div class="class-card">
+                        <span class="class-badge">Advanced</span>
+                        <h3>Classes 11–12</h3>
+                        <div class="class-subjects">
+                            <strong>All Streams:</strong><br>
+                            Science • Commerce • Humanities
+                        </div>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Advanced concepts • Answer writing • Competitive edge</p>
+                        <button class="btn-know-more" onclick="showPage('about')">Know More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIBRARY HIGHLIGHT -->
+        <section class="library-section">
+            <div class="library-intro">
+                <h3>📚 Swastik Academic Library</h3>
+                <p>A dedicated academic library with trusted NCERT resources and reference materials for Classes 5–12.</p>
+                <button class="btn-library" onclick="showPage('library')">Go to Library</button>
+            </div>
+        </section>
+
+        <!-- CONTACT STRIP -->
+        <section class="contact-strip">
+            <h3>Ready to Join Swastik Classes?</h3>
+            <p>Discuss your learning needs and choose the perfect batch for you.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/917701926583" class="contact-btn">📱 WhatsApp</a>
+                <a href="tel:+918765432100" class="contact-btn">📞 Call Now</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <h1>About Swastik Classes</h1>
+
+        <h2>Our Vision</h2>
+        <div class="content-box">
+            <p>Swastik Classes is not just a coaching center—it's a structured academic ecosystem dedicated to building strong foundations and boosting student confidence. We believe in concept-based learning that goes beyond exam preparation.</p>
+        </div>
+
+        <h2>Teaching Approach</h2>
+        <div class="approach-list">
+            <div class="approach-item">
+                <strong>NCERT-First</strong><br>Official syllabus alignment
+            </div>
+            <div class="approach-item">
+                <strong>Concept → Practice → Revision</strong><br>Structured learning cycle
+            </div>
+            <div class="approach-item">
+                <strong>Regular Tests & Feedback</strong><br>Progress tracking & improvement
+            </div>
+            <div class="approach-item">
+                <strong>Supportive Environment</strong><br>Doubt solving & personal attention
+            </div>
+        </div>
+
+        <h2>Who Should Join?</h2>
+        <ul>
+            <li><strong>School students</strong> needing concept clarity beyond classroom teaching</li>
+            <li><strong>Board exam aspirants</strong> (Classes 10, 12) seeking focused preparation</li>
+            <li><strong>Competitive learners</strong> aiming for excellence in academics</li>
+            <li><strong>Students</strong> looking for a disciplined, supportive learning environment</li>
+        </ul>
+
+        <h2>Our Location</h2>
+        <div class="content-box">
+            <p><strong>A-23/1 Defence Colony, Bhopura, Sahibabad, Ghaziabad (UP)</strong></p>
+            <p style="margin-top: 1rem; color: var(--text-light);">Easily accessible location in central Ghaziabad with safe, dedicated coaching facilities.</p>
+        </div>
+    </div>
+
+    <!-- ACADEMIC PROGRAMS PAGE -->
+    <div id="programs" class="page">
+        <h1>Academic Programs</h1>
+
+        <h2>🟢 Classes 1–5: Foundation</h2>
+        <div class="content-box">
+            <strong>Subjects:</strong> Maths, English, Hindi, EVS<br><br>
+            <strong>Focus:</strong> Building core academic skills, reading & writing proficiency, problem-solving habits, and confidence in basic concepts.
+        </div>
+
+        <h2>🟡 Classes 6–10: Board Preparation</h2>
+        <div class="content-box">
+            <strong>Subjects:</strong> Maths, Science, Social Science, English, Hindi<br><br>
+            <strong>Focus:</strong> NCERT-aligned curriculum, board exam strategies, concept clarity, numerical & analytical skills, and complete answer writing practice.
+        </div>
+
+        <h2>🔴 Classes 11–12: Advanced & Specialized</h2>
+
+        <h3>Science Stream</h3>
+        <ul>
+            <li><strong>Physics:</strong> Mechanics, Thermodynamics, Electromagnetism, Modern Physics</li>
+            <li><strong>Chemistry:</strong> Organic, Inorganic, Physical Chemistry with lab practice</li>
+            <li><strong>Mathematics / Biology:</strong> Advanced problem-solving and biological concepts</li>
+        </ul>
+
+        <h3>Commerce Stream</h3>
+        <ul>
+            <li><strong>Accountancy:</strong> Journalizing, ledger, final accounts, partnership accounts</li>
+            <li><strong>Business Studies:</strong> Organizational management and business ethics</li>
+            <li><strong>Economics:</strong> Micro & macro economics with real-world applications</li>
+        </ul>
+
+        <h3>Humanities Stream</h3>
+        <ul>
+            <li><strong>History:</strong> Ancient, Medieval, Modern Indian & World history</li>
+            <li><strong>Political Science:</strong> Indian Constitution, Governance, International Relations</li>
+            <li><strong>Geography:</strong> Physical & Human geography with map work</li>
+            <li><strong>Economics:</strong> Development economics and socio-economic issues</li>
+        </ul>
+
+        <h2>Our Methodology</h2>
+        <div class="approach-list">
+            <div class="approach-item">
+                <strong>Concept Clarity</strong><br>Deep understanding before practice
+            </div>
+            <div class="approach-item">
+                <strong>Numerical & Analytical Skills</strong><br>Problem-solving mastery
+            </div>
+            <div class="approach-item">
+                <strong>Answer Writing Practice</strong><br>Board exam technique & presentation
+            </div>
+            <div class="approach-item">
+                <strong>Regular Assessments</strong><br>Progress tracking & targeted improvement
+            </div>
+        </div>
+    </div>
+
+    <!-- LIBRARY PAGE -->
+    <div id="library" class="page">
+        <h1>📚 Swastik Academic Library</h1>
+        <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">One trusted academic space with official NCERT textbooks, reference materials, and carefully selected help books for Classes 5–12.</p>
+
+        <div class="class-selector">
+            <button class="class-btn active" onclick="showClassLibrary('class5')">Class 5</button>
+            <button class="class-btn" onclick="showClassLibrary('class6')">Class 6</button>
+            <button class="class-btn" onclick="showClassLibrary('class7')">Class 7</button>
+            <button class="class-btn" onclick="showClassLibrary('class8')">Class 8</button>
+            <button class="class-btn" onclick="showClassLibrary('class9')">Class 9</button>
+            <button class="class-btn" onclick="showClassLibrary('class10')">Class 10</button>
+            <button class="class-btn" onclick="showClassLibrary('class11')">Class 11</button>
+            <button class="class-btn" onclick="showClassLibrary('class12')">Class 12</button>
+        </div>
+
+        <!-- CLASS 5 -->
+        <div id="class5" class="library-content active">
+            <h2>Class 5 – NCERT Textbooks</h2>
+            <div class="books-list">
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English (Marigold)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?eesa1=0-10" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi (Rimjhim)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?ehhn1=0-18" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?eemh1=0-14" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>EVS (Looking Around)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?eeap1=0-22" target="_blank" class="book-link">Open Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 6 -->
+        <div id="class6" class="library-content">
+            <h2>Class 6 – NCERT Textbooks</h2>
+            <div class="books-list">
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?fehl1=0-8" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?fhml1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?femh1=0-12" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Science</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?fesc1=0-11" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Social Science (Our Past – I)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?fess1=0-10" target="_blank" class="book-link">Open Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 7 -->
+        <div id="class7" class="library-content">
+            <h2>Class 7 – NCERT Textbooks</h2>
+            <div class="books-list">
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?gehc1=0-8" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?ghvs1=0-15" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?gemh1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Science</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?gesc1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Social Science – History</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?gess1=0-8" target="_blank" class="book-link">Open Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 8 -->
+        <div id="class8" class="library-content">
+            <h2>Class 8 – NCERT Textbooks</h2>
+            <div class="books-list">
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?hehd1=0-8" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?hhvs1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?hemh1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Science</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?hesc1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Social Science – History</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?hess2=0-8" target="_blank" class="book-link">Open Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 9 -->
+        <div id="class9" class="library-content">
+            <h2>Class 9 – NCERT Textbooks & Reference Books</h2>
+            <div class="books-list">
+                <h3 class="book-section-title">📘 NCERT Textbooks</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English (Beehive)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iebe1=0-9" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?ihks1=0-13" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iemh1=0-12" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Science</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iesc1=0-12" target="_blank" class="book-link">Open Book</a>
+                </div>
+
+                <h3 class="book-section-title">📕 Help & Reference Books</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Class 9</h4>
+                        <p>For practice & concept reinforcement</p>
+                    </div>
+                    <a href="https://readyourflow.com/mcq-rd-sharma-mathematics-class-9-2025-2026/" target="_blank" class="book-link">View Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 10 -->
+        <div id="class10" class="library-content">
+            <h2>Class 10 – NCERT Textbooks & Reference Books</h2>
+            <div class="books-list">
+                <h3 class="book-section-title">📘 NCERT Textbooks</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>English (First Flight)</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iemo1=0-9" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Hindi</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?ihhn2=0-18" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Mathematics</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iemh1=0-12" target="_blank" class="book-link">Open Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Science</h4>
+                        <p>Official NCERT textbook</p>
+                    </div>
+                    <a href="https://ncert.nic.in/textbook.php?iesc1=0-12" target="_blank" class="book-link">Open Book</a>
+                </div>
+
+                <h3 class="book-section-title">📕 Help & Reference Books</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Class 10</h4>
+                        <p>For CBSE board exam preparation</p>
+                    </div>
+                    <a href="https://readyourflow.com/mcq-rd-sharma-mathematics-class-10-2025-2026-cbse-examinations/" target="_blank" class="book-link">View Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 11 -->
+        <div id="class11" class="library-content">
+            <h2>Class 11 – Reference Books (Science Stream)</h2>
+            <div class="books-list">
+                <h3 class="book-section-title">📕 Mathematics</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Vol 1</h4>
+                        <p>Advanced concepts & practice problems</p>
+                    </div>
+                    <a href="https://readyourflow.com/cbse-class-11-maths-rd-sharma-voulme-1-2023-2024-pdf-free/" target="_blank" class="book-link">View Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Vol 2</h4>
+                        <p>Complete coverage & solved examples</p>
+                    </div>
+                    <a href="https://readyourflow.com/cbse-class-11-maths-rd-sharma-voulme-2-2023-2024-pdf-free/" target="_blank" class="book-link">View Book</a>
+                </div>
+
+                <h3 class="book-section-title">📗 Physics</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>SL Arora Physics Vol 1</h4>
+                        <p>Mechanics & Thermodynamics</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/10eB46QeXoeit2k6xIpEcWO7H_T8vCAn_/view?usp=sharing" target="_blank" class="book-link">View Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>SL Arora Physics Vol 2</h4>
+                        <p>Electromagnetism & Modern Physics</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1Ahhs8Odf8C1ywcHDCqBWA9L9n_XeNXNX/view" target="_blank" class="book-link">View Book</a>
+                </div>
+
+                <h3 class="book-section-title">📙 Chemistry</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Pradeep Chemistry Vol 1</h4>
+                        <p>Inorganic & Physical Chemistry</p>
+                    </div>
+                    <a href="https://readyourflow.com/pradeep-chemistry-class-11-volume-1-2023-2024-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>Pradeep Chemistry Vol 2</h4>
+                        <p>Organic Chemistry & Lab Concepts</p>
+                    </div>
+                    <a href="https://readyourflow.com/pradeep-chemistry-class-11-volume-2-2023-2024-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLASS 12 -->
+        <div id="class12" class="library-content">
+            <h2>Class 12 – Reference Books (Science Stream)</h2>
+            <div class="books-list">
+                <h3 class="book-section-title">📕 Mathematics</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Vol 1</h4>
+                        <p>Advanced concepts & board exam prep</p>
+                    </div>
+                    <a href="https://readyourflow.com/download-rd-sharma-mcq-in-maths-class-12-2023-2024-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>RD Sharma Mathematics Vol 2</h4>
+                        <p>Complete problem solving practice</p>
+                    </div>
+                    <a href="https://readyourflow.com/download-rd-sharma-maths-volume-2-class-12-2023-2024-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+
+                <h3 class="book-section-title">📗 Physics</h3>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>SL Arora Physics Vol 1</h4>
+                        <p>Electrostatics & Current Electricity</p>
+                    </div>
+                    <a href="https://readyourflow.com/sl-arora-physics-volume-1-2023-2024-class-12-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+                <div class="book-item">
+                    <div class="book-info">
+                        <h4>SL Arora Physics Vol 2</h4>
+                        <p>Magnetism & Modern Physics</p>
+                    </div>
+                    <a href="https://readyourflow.com/download-sl-arora-physics-volume-2-2023-2024-class-12-pdf/" target="_blank" class="book-link">View Book</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JOIN COACHING PAGE -->
+    <div id="join" class="page">
+        <h1>Join Swastik Classes</h1>
+
+        <div class="content-box">
+            <h3 style="margin-top: 0;">Start Your Learning Journey Today</h3>
+            <p>Joining Swastik Classes is simple and straightforward. We provide personalized guidance to help you choose the perfect class and batch.</p>
+        </div>
+
+        <h2>Steps to Join</h2>
+        <ol>
+            <li><strong>Contact Us:</strong> Reach out on WhatsApp or call us directly.</li>
+            <li><strong>Discuss Your Needs:</strong> Tell us about your class, subjects, and learning goals.</li>
+            <li><strong>Choose Your Batch:</strong> Select a batch time that suits your schedule.</li>
+            <li><strong>Join & Grow:</strong> Start learning with confidence and structure.</li>
+        </ol>
+
+        <h2>Why Parents Choose Us</h2>
+        <ul>
+            <li>Concept-based curriculum aligned with NCERT</li>
+            <li>Small, manageable batch sizes</li>
+            <li>Regular progress reports & parent-teacher communication</li>
+            <li>Structured doubt-solving sessions</li>
+            <li>Safe, disciplined learning environment</li>
+            <li>Affordable coaching fees with transparent structure</li>
+        </ul>
+
+        <div class="contact-strip" style="margin-top: 3rem;">
+            <h3>Ready to Get Started?</h3>
+            <p>Connect with us today and take the first step towards academic excellence.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/917701926583" class="contact-btn">📱 WhatsApp Chat</a>
+                <a href="tel:+918765432100" class="contact-btn">📞 Call Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <h1>Contact Swastik Classes</h1>
+
+        <div class="content-box">
+            <h3 style="margin-top: 0;">📍 Our Location</h3>
+            <p><strong>A-23/1 Defence Colony, Bhopura, Sahibabad, Ghaziabad (UP)</strong></p>
+            <p style="margin-top: 1rem; color: var(--text-light);">Located in the heart of Ghaziabad with easy accessibility for students from all areas.</p>
+        </div>
+
+        <h2>Get In Touch</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+            <div class="content-box">
+                <h3 style="margin-top: 0;">📱 WhatsApp</h3>
+                <p style="margin: 1rem 0;">Quick messaging for inquiries and batch information.</p>
+                <a href="https://wa.me/917701926583" class="btn btn-primary" style="width: 100%; text-align: center;">Open WhatsApp</a>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-top: 0;">📞 Phone</h3>
+                <p style="margin: 1rem 0;">Direct call for immediate assistance.</p>
+                <a href="tel:+917701926583" class="btn btn-primary" style="width: 100%; text-align: center;">Call Now</a>
+            </div>
+
+            <div class="content-box">
+                <h3 style="margin-top: 0;">🕐 Visiting Hours</h3>
+                <p style="margin: 0;">Mon-Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed<br>Flexible coaching hours available</p>
+            </div>
+        </div>
+
+        <h2>Why Visit Us?</h2>
+        <ul>
+            <li>Meet the teaching team and understand our methodology</li>
+            <li>See our learning facilities and library</li>
+            <li>Discuss your child's academic goals</li>
+            <li>Get personalized coaching recommendations</li>
+            <li>Ask any questions about curriculum and fees</li>
+        </ul>
+
+        <div class="contact-strip" style="margin-top: 3rem;">
+            <h3>Questions? We're Here to Help!</h3>
+            <p>Reach out to us anytime. Our team responds promptly.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/917701926583" class="contact-btn">Message on WhatsApp</a>
+                <a href="tel:+917701926583" class="contact-btn">Call Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Swastik Classes</h4>
+                <p>Building Academic Excellence</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">Classes 1–12 | NCERT-Focused | Concept-Based</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('about')">About Us</a>
+                <a href="#" onclick="showPage('programs')">Academic Programs</a>
+                <a href="#" onclick="showPage('library')">Library</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="https://wa.me/917701926583">WhatsApp</a>
+                <a href="tel:+917701926583">+91 7701926583</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">A-23/1 Defence Colony<br>Bhopura, Sahibabad<br>Ghaziabad (UP)</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Swastik Classes. All rights reserved. | Building Strong Academic Foundations</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                navLinks.classList.remove('active');
+            }
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function showClassLibrary(classId) {
+            const contents = document.querySelectorAll('.library-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const selectedClass = document.getElementById(classId);
+            if (selectedClass) {
+                selectedClass.classList.add('active');
+            }
+
+            const buttons = document.querySelectorAll('.class-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelector('.nav-links');
+            const menuIcon = document.querySelector('.menu-icon');
+
+            if (!navbar.contains(event.target)) {
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
